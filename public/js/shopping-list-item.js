@@ -8,4 +8,13 @@ class ShoppingListItem {
   check = function() {
     this.isDone = true;
   };
+
+  uncheck = function() {
+    this.isDone = false;
+  };
+
+  render = function() {
+    return `<li class="completed_${this.isDone}"><span>${this.name}</span>
+<span>${this.description}</span><input type="checkbox" class="check"><button class="rmvButton">x</button></li>`;
+  };
 }

@@ -24,14 +24,18 @@ describe("Shopping Item", function() {
   });
 });
 
-describe("Check Method", function() {
-  let foo = new ShoppingListItem("Beer", "Refreshing Beverage");
+describe('Check Method', function() {
+  let foo = new ShoppingListItem('Beer', 'Refreshing Beverage');
   foo.check();
-  it("Check method should set isDone property to true", function() {
+  it('Check method should set isDone property to true', function() {
     expect(foo.isDone).to.equal(true);
   });
+});
 
-  it("Check method should set isDone property to false", function() {
+describe('Uncheck Method', function() {
+  let foo = new ShoppingListItem('Beer', 'Refreshing Beverage');
+  foo.uncheck();
+  it('Uncheck method should set isDone property to false', function() {
     expect(foo.isDone).to.equal(false);
   });
 });

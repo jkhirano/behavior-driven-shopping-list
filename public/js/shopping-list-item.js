@@ -13,8 +13,7 @@ class ShoppingListItem {
     this.isDone = false;
   };
 
-  render = function() {
-    return `<li class="completed_${this.isDone}"><span>${this.name}</span>
-<span>${this.description}</span><input type="checkbox" class="check"><button class="rmvButton">x</button></li>`;
-  };
+  render = function(){
+    return `<ul><li class="completed_${this.isDone}"><span>${this.name}</span><span>${this.description}.</span></li><ul>`;
+  }
 }

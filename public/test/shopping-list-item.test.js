@@ -24,18 +24,39 @@ describe("Shopping Item", function() {
   });
 });
 
-describe('Check Method', function() {
-  let foo = new ShoppingListItem('Beer', 'Refreshing Beverage');
+describe("Check Method", function() {
+  let foo = new ShoppingListItem("Beer", "Refreshing Beverage");
   foo.check();
-  it('Check method should set isDone property to true', function() {
+  it("Check method should set isDone property to true", function() {
     expect(foo.isDone).to.equal(true);
   });
 });
 
-describe('Uncheck Method', function() {
-  let foo = new ShoppingListItem('Beer', 'Refreshing Beverage');
+describe("Uncheck Method", function() {
+  let foo = new ShoppingListItem("Beer", "Refreshing Beverage");
   foo.uncheck();
-  it('Uncheck method should set isDone property to false', function() {
+  it("Uncheck method should set isDone property to false", function() {
     expect(foo.isDone).to.equal(false);
+  });
+});
+
+describe("Render Method", function() {
+  let foo = new ShoppingListItem("Beer", "Refreshing Beverage");
+
+  it("Render should be a function", function() {
+    expect(foo.render).is.a("function");
+  });
+
+  it("Render method will construct and return an HTML formatted string", function() {
+    expect(foo.render()).is.equal(
+      `<li class="completed_false"><span>Beer</span> <span>Refreshing Beverage</span></li>`
+    );
+  });
+
+  it("Render method should return 'completed_true' if isDone is true", function() {
+    foo.check();
+    expect(foo.render()).is.equal(
+      `<li class="completed_true"><span>Tacos</span><span>Tasty Cat.</span></li>`
+    );
   });
 });

@@ -1,4 +1,3 @@
-
 class ShoppingListItem {
   constructor(name, description) {
     this.name = name;
@@ -6,5 +5,7 @@ class ShoppingListItem {
     this.isDone = false;
   }
 
-
+  check = function() {
+    this.isDone = true;
+  };
 }
